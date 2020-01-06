@@ -1,0 +1,56 @@
+<form #contactForm="ngForm" (ngSubmit)="log(contactForm.value)">
+
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" ngModel #firstname="ngModel" required>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" ngModel #lastname="ngModel" required>
+  </div>
+  <div ngModelGroup="address">
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" name="city" 
+      ngModel #city="ngModel" required>
+    </div>
+    <div style="color:red"
+    *ngIf="!city?.valid && (city?.dirty || city?.touched)" 
+    class="alert alert-danger">
+      <div [hidden]="!city.errors.required">
+        City name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" class="form-control" 
+      name="street" ngModel #street="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="pincode">Pincode</label>
+      <input type="text" class="form-control" 
+      name="pincode" ngModel #pincode="ngModel" 
+      required pattern="[0-9]{6}">
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+    </div>
+    <div style="color: red"
+    *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)"
+    class="alert alert-danger">
+      <div [hidden]="!firstname.errors.minlength">
+        FirstName minimum length is
+        {{firstname.errors.minlength?.requiredLength}}
+      </div>
+    </div>
+    <div style="color: red"
+    *ngIf="!pincode?.valid && (pincode?.dirty || pincode?.touched)"
+    class="alert alert-danger">
+      <div [hidden]="!pincode.errors">
+        Enter a valid pincode pattern of only 6 digits
+      </div>
+    </div>
+  </div>
+</form>
+
+<pre>{{contactForm.value|json}}</pre>

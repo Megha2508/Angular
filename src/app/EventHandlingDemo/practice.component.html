@@ -1,0 +1,13 @@
+<h3>{{title}}</h3>   
+<input id="Value" name="Value" required  placeholder="Enter Any Item">  
+<br>    
+
+<!-- Add button to add record -->    
+<button type="submit" (click)="AddItem()" [disabled]="IsForUpdate">Add</button>    
+<!-- Update button to submit updated value -->    
+<button type="submit" (click)="UpdateItem()" [disabled]="!IsForUpdate">Update</button>
+
+<div *ngFor="let data of myItems;let i= index">    
+    {{data.Value}}
+    <button (click)="EditItem(i)">Edit</button>
+</div>

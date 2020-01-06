@@ -1,0 +1,30 @@
+<div>
+    <h4>Date Pipe Example</h4>
+    <b>Date Format: </b>My joining date is {{jd|date}}<br/>
+    <b>Date Format: </b>My joining date is {{jd|date:"dd/MM/yyyy"}}<br/>
+    <b>Date Format: </b>My joining date is {{jd|date:"fullDate"|uppercase}}<br/>
+    <b>Date Format: </b>My joining date is {{jd|date:"shortTime"}}<br/>
+</div>
+<div>
+    <p>{{num1|percent}}</p>
+    <!--{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}-->
+    <p>{{num1|percent:'2.2-5'}}</p>
+    <p>{{num2|percent:'1.2-5'}}</p>
+</div>
+<div>
+    <h4>Currency Pipe Example</h4>
+    <b>Euro: </b>Price of Laptop {{650|currency:'EUR':true}}<br/>
+    <b>Euro: </b>Price of Laptop {{750|currency:'USD':false}}<br/>
+    <b>Euro: </b>Price of Laptop {{750|currency:'INR':true}}<br/>
+</div>
+<div>
+    <!--{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}-->
+    <p>{{12.34673|number:'3.2-5'}}</p>
+    <p>{{6.6331|number:'3.2-3'}}</p>
+</div>
+<div>
+    <b>Using Json pipe</b><br/>
+    <p>{{course}}</p>
+    <p>{{bookObj|json}}</p>
+</div>
+<p>{{xyz|titlecase}}</p>

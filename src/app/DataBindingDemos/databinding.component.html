@@ -1,0 +1,27 @@
+<h4>Property Binding-Elment Property Binding</h4>
+Logo: <img [src]="website.logo"/>
+
+<br/>Logo: <img bind-src="website.logo"/>
+
+<br/>Logo: <img src="{{website.logo}}"/>
+
+<br/>Url: <a [href]="website.url" [textContent]="website.name"></a>
+
+<br/>Url: <a bind-href="website.url" bind-textContent="website.name"></a>
+
+<br/>Url: <a href="{{website.url}}" textContent="{{website.name}}"></a>
+
+<p [textContent]="website.description"></p>
+
+<p bind-textContent="website.description"></p>
+
+<p textContent="{{website.description}}"></p>
+
+<br/><button [disabled]="flag">Submit</button>
+
+<br/><button bind-disabled="!flag">Submit</button>
+
+<br/>
+<h4>Component Property Binding</h4>
+<br/><my-msg prefixMsg="Website name-"
+[siteName]="website.name"></my-msg>

@@ -1,0 +1,58 @@
+<h1>All Products</h1>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>ProductID</th>
+                <th>ProductName</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let p of products;let i=index;'>
+            <td>{{i+1}}</td>
+            <td>{{p.pid}}</td>
+            <td>{{p.pname}}</td>
+            <td>{{p.price|currency:'INR':true}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.price*p.quantity|currency:'INR':true}}</td>
+            <td>{{p.disc/100| percent:'2.0-0'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<h1>Products with discount</h1>
+<div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>ProductID</th>
+                    <th>ProductName</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Discount</th>
+                    <th>Discounted Amount</th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let p of products;let i=index;'>
+                <tr *ngIf='p.disc'>
+                <td>{{i+1}}</td>
+                <td>{{p.pid}}</td>
+                <td>{{p.pname}}</td>
+                <td>{{p.price|currency:'INR':true}}</td>
+                <td>{{p.quantity}}</td>
+                <td>{{p.price*p.quantity|currency:'INR':true}}</td>
+                <td>{{p.disc/100| percent:'2.0-0'}}</td>
+                <td>{{p.price*p.quantity|calDisc:p.disc|currency:'INR':true}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    

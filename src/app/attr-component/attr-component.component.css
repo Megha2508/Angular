@@ -1,0 +1,44 @@
+.red{
+    color:red
+}
+.blue{
+    color: blue
+}
+.orange{
+    color: orange
+}
+.bold-text{
+    font-weight: bold
+}
+.show-class{
+    visibility: visible
+}
+.hide-class{
+    visibility: hidden
+}
+.italic-text{
+    font-style: italic
+}
+.small-text{
+    font-size: 10px
+}
+.style1{
+    font-family: vardana;
+    font-size: 20px
+}
+.style2{
+    color: red;
+    text-align: center;
+}
+.one{
+    color: green;
+}
+.two{
+    font-size: 20px
+}
+.three{
+    color: red
+}
+.four{
+    font-size: 15px
+}

@@ -1,0 +1,62 @@
+<div class="container">
+
+    <h1 class="heading">
+        <strong>Contact </strong> Form</h1>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)" novalidate>
+
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" name="firstname" formControlName="firstname" >
+        </div>
+        <div *ngIf="!contactForm.controls.firstname?.valid && (contactForm.controls.firstname?.dirty ||contactForm.controls.firstname?.touched)"
+            class="alert alert-danger">
+            <div [hidden]="!contactForm.controls.firstname.errors.required">
+                First Name is required
+            </div>
+            <div [hidden]="!contactForm.controls.firstname.errors.minlength">
+                First Name Minimum Length is {{contactForm.controls.firstname.errors.minlength?.requiredLength}}
+            </div>
+            <div [hidden]="!contactForm.controls.firstname.errors.maxlength">
+                First Name Maximum Length is {{contactForm.controls.firstname.errors.maxlength?.requiredLength}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" name="lastname" formControlName="lastname">
+        </div>
+        <div *ngIf="contactForm.controls['lastname'].hasError('minlength')" class="alert alert-danger">
+            Last Name is requires {{contactForm.controls.lastname.errors.minlength?.requiredLength}}
+        </div>
+
+        <div formGroupName="address">
+
+            <div class="form-group">
+                <label for="city">Street</label>
+                <input type="text" class="form-control" name="street" formControlName="street">
+            </div>
+
+            <div class="form-group">
+                <label for="street">City</label>
+                <input type="text" class="form-control" name="city" formControlName="city">
+            </div>
+
+            <div class="form-group">
+                <label for="pincode">Pin Code</label>
+                <input type="text" class="form-control" name="pincode" formControlName="pincode">
+            </div>
+            <div *ngIf="contactForm.controls['address'].controls['pincode'].hasError('pattern')" class="alert alert-danger">
+                Postal code should be 5 digits
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+        </div>
+        <div> 
+            <br>Final value: {{value | json}}
+        </div>
+    </form>
+
+</div>

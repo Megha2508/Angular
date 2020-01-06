@@ -1,0 +1,12 @@
+<h4>Enter first number</h4>
+<input type='number' [(ngModel)]="n1" (focus)="check()"/>
+<br/>
+<h4>Enter second number</h4>
+<input type='number' [(ngModel)]="n2" (focus)="check()"/>
+<br/><br/>
+<button (click)="Add()">Addition</button>
+<button (click)="Sub()">Subtraction</button>
+<button (click)="Mul()">Multiplication</button>
+<button (click)="Div()">Division</button>
+<br/>
+<h4 *ngIf='flag'>Answer is {{result}}</h4>

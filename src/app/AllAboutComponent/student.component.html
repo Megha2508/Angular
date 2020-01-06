@@ -1,0 +1,33 @@
+<h2>{{title}}</h2>
+<div>
+    <table>
+        <tr>
+            <th>Roll no.</th>
+            <th>Name</th>
+            <th>Subject1</th>
+            <th>Subject2</th>
+            <th>Subject3</th>
+            <th>Total Marks</th>
+            <th>Percentage</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>{{obj.rollno}}</td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.m1}}</td>
+            <td>{{obj.m2}}</td>
+            <td>{{obj.m3}}</td>
+            <td>{{obj.m1+obj.m2+obj.m3}}</td>
+            <td>{{obj.m1+obj.m2+obj.m3|calPerc:'300'}}</td>
+        </tr>
+        <tr>
+            <td>{{obj1.rollno}}</td>
+            <td>{{obj1.name}}</td>
+            <td>{{obj1.m1}}</td>
+            <td>{{obj1.m2}}</td>
+            <td>{{obj1.m3}}</td>
+            <td>{{obj1.m1+obj1.m2+obj1.m3}}</td>
+            <td>{{obj1.m1+obj1.m2+obj1.m3|calPerc:'300'}}</td>
+        </tr>
+    </table>
+</div>

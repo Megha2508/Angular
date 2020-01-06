@@ -1,0 +1,19 @@
+div{
+    width: 500px;
+    color: black;
+    border: 2px solid burlywood;
+    padding: 3px;
+}
+h1 {
+    color: blueviolet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 200%;
+    background-color: bisque;
+}
+
+h2 {
+    color: blue;
+    font-family: cursive;
+    font-size: 100%;
+    background-color: rgb(248, 153, 37);
+}

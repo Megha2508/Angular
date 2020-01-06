@@ -1,0 +1,5 @@
+<h4>Enter a number</h4>
+<input type='number' [(ngModel)]="n" (focus)="check()"/>
+<br/>
+<button (click)="factorial()">Submit</button>
+<h4 *ngIf='flag'>Factorial is {{fact}}</h4>

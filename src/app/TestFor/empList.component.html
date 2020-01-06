@@ -1,0 +1,77 @@
+<h1>All Employees</h1>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Monthly Salary</th>
+                <th>Date of Birth</th>
+                <th>Fulltime</th>
+                <th>IsFirst</th>
+                <th>IsLast</th>
+                <th>IsEven</th>
+                <th>IsOdd</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let emp of employees;let i=index; let IsFirst=first; 
+                let IsLast=last; let IsEven=even; let IsOdd=odd;'
+                [ngSwitch]='emp.fulltime'>
+            <tr *ngSwitchCase="true" class="test">
+            <td>{{i+1}}</td>
+            <td>{{emp.eid}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.DOB}}</td>
+            <td>{{emp.fulltime}}</td>
+            <td>{{IsFirst}}</td>
+            <td>{{IsLast}}</td>
+            <td>{{IsEven}}</td>
+            <td>{{IsOdd}}</td>
+            </tr>
+            <tr *ngSwitchDefault class="default">
+                <td>{{i+1}}</td>
+                <td>{{emp.eid}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.sal}}</td>
+                <td>{{emp.DOB}}</td>
+                <td>{{emp.fulltime}}</td>
+                <td>{{IsFirst}}</td>
+                <td>{{IsLast}}</td>
+                <td>{{IsEven}}</td>
+                <td>{{IsOdd}}</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+<!--
+<br>
+<h1>Fulltime Employees</h1>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Monthly Salary</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let emp of employees;let i=index;'>
+            <tr *ngIf='emp.fulltime'>
+            <td>{{i+1}}</td>
+            <td>{{emp.eid}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.DOB}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->

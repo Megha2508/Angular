@@ -1,0 +1,18 @@
+<div [style.color]="'orange'">Text is in orange</div>
+
+<div [ngStyle]="{'color':color,'font-size':size,'font-weight':'bold'}">
+  {{svar}}
+</div>
+
+<div [ngStyle]="{'color':color,'font-size':size+'px'}">
+  style using ngStyle
+</div>
+
+<div [className]="'blue'">CSS class using property syntax, this text is blue</div>
+<p [className]="'style1'">Style applied using class name</p>
+
+<div [ngClass]="['bold-text','green']">array of classes (using ngclass)</div>
+<div [ngClass]="'italic-text blue'">string of classes (using ngclass)</div>
+<div [ngClass]="{'small-text':true,'red':true}">object of classes (using ngclass)</div>
+
+<span [ngClass]="displayText">using ngClass</span>

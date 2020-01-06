@@ -1,0 +1,40 @@
+<h2>{{title}}</h2>
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Price</th>
+            <th>Display Details</th>
+        </tr>
+        <tr>
+            <td>{{obj.ProductId}}</td>
+            <td>{{obj.ProductName}}</td>
+            <td>{{obj.ProductQuantity}}</td>
+            <td>{{obj.ProductRate}}</td>
+            <td>{{obj.ProductRate*obj.ProductQuantity}}</td>
+            <td><a [routerLink]="['/product/details','aaaa']">Click</a></td>
+        </tr>
+        <tr>
+            <td>{{obj1.ProductId}}</td>
+            <td>{{obj1.ProductName}}</td>
+            <td>{{obj1.ProductQuantity}}</td>
+            <td>{{obj1.ProductRate}}</td>
+            <td>{{obj1.ProductRate*obj1.ProductQuantity}}</td>
+            <td><a [routerLink]="['/product/details','bbbb']">Click</a></td>
+        </tr>
+        <tr>
+            <td>{{obj2.ProductId}}</td>
+            <td>{{obj2.ProductName}}</td>
+            <td>{{obj2.ProductQuantity}}</td>
+            <td>{{obj2.ProductRate}}</td>
+            <td>{{obj2.ProductRate*obj2.ProductQuantity}}</td>
+            <td><a [routerLink]="['/product/details','cccc']">Click</a></td>
+        </tr>
+    </table>
+</div>
+<div class="inner-outlet">
+    <router-outlet></router-outlet>
+</div>

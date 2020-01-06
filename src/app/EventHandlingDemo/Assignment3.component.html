@@ -1,0 +1,40 @@
+<h2>Product Details</h2>
+<p>Product Id:</p> <input type='text' [(ngModel)]='new.id' />
+<p>Product Name:</p> <input type='text' [(ngModel)]='new.name'/>
+<p>Product Price:</p> <input type='number' [(ngModel)]='new.price'/>
+<p>Product Discount:</p> <input type='number' [(ngModel)]='new.discount'/>
+<br/>
+<br>
+<button (click)='Add()' [disabled]="flag">Add</button>
+<button (click)='Done()' [disabled]="!flag">Done</button>
+<br/>
+<br>
+<div>
+    <table border="2px">
+    <thead>
+        <tr>
+            <th>Sr</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Discount</th>
+            <th>Action</th>
+            <th>Display Details</th>
+        </tr>
+    </thead>
+    <tbody *ngFor='let p of product;let i=index;'>
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.discount}}</td>
+            <td><button (click)="Edit(p.id)" [disabled]="flag">Edit</button>|<button (click)="Delete(p.id)">Delete</button></td>
+            <td><a [routerLink]="['/product/details',p.id]" [queryParams]={nm:p.name,pr:p.price,ds:p.discount}>Click</a></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<div class="inner-outlet">
+    <router-outlet></router-outlet>
+</div>

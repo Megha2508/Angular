@@ -1,0 +1,17 @@
+<ul *ngFor='let p of people' [ngSwitch]='p.country'>
+    <li *ngSwitchCase="'India'" class="test-blue">
+        {{p.name}} is from {{p.country}}
+    </li>
+    <li *ngSwitchCase="'Czech Republic'" class="test-red">
+        {{p.name}} is from {{p.country}}
+    </li>
+    <li *ngSwitchCase="'Italy'" class="test-violet">
+        {{p.name}} is from {{p.country}}
+    </li>
+    <li *ngSwitchCase="'Spain'" class="test-yellow">
+        {{p.name}} is from {{p.country}}
+    </li>
+    <li *ngSwitchDefault class="test-normal">
+        {{p.name}} is from {{p.country}}
+    </li>
+</ul>
